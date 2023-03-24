@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body class="md:container md:mx-auto">
+    <%- include("../partials/nav.ejs") %>
+    <h1>HOMEPAGE</h1>
+    <main>
+      <section class="mb-5">
+        <a href="/blogs/create">create</a>
+      </section>
+      <% if(blogs.length > 0) { %> <% blogs.forEach(blog => { %>
+      <section class="mb-5">
+        <a href="/blogs/<%= blog._id %>">
+          <h3>Title: <%= blog.title %></h3>
+          <p>Snippet: <%= blog.snippet %></p>
+          <p>Body: <%= blog.body %></p>
+        </a>
+      </section>
+      <% }) %> <% } else { %>
+      <section>
+        <p>blogs empty</p>
+      </section>
+      <% } %>
+    </main>
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>

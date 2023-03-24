@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body class="md:container md:mx-auto">
+    <h1>EJS BLOG</h1>
+    <%- include("../partials/nav.ejs") %>
+    <main>
+      <section>
+        <form action="/blogs/create" method="POST">
+          <div>
+            <label for="title">Blog Title:</label>
+            <input type="text" id="title" name="title" required />
+          </div>
+          <div>
+            <label for="snippet">Blog Snippet:</label>
+            <input type="text" id="snippet" name="snippet" required />
+          </div>
+          <div>
+            <label for="body">Blog Title:</label>
+            <textarea id="body" name="body" required></textarea>
+          </div>
+          <button>submit</button>
+        </form>
+      </section>
+    </main>
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>
