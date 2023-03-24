@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "build": "npm run clean && npm run build:css && npm run build:js",
-    "build:css": "node-sass --include-path ./src/scss src/scss/main.scss public/css/main.css",
-    "build:js": "browserify src/js/main.js -o public/js/main.js",
-    "clean": "rimraf public/js && rimraf public/css"
+    "build": "npm run build"
   },
   "author": "",
   "license": "ISC",
