@@ -16,7 +16,7 @@ mongoose
   .connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((result) => {
     console.log("connect");
-    app.listen(4000);
+    app.listen(process.env.URL);
   })
   .catch((err) => {
     throw err;
@@ -35,6 +35,7 @@ app.use(express.static("public"));
 
 //Home Routes
 app.use(HomeRoutes);
+
 //Blog Routes
 app.use("/blogs", BlogRoutes);
 
